@@ -1,0 +1,14 @@
+@startuml
+actor User #FFBBBB
+entity "Operating System" as OS #lightblue
+entity "Input Buffer" as Buffer #lightblue
+entity "std::cin" as Cin #lightblue
+entity "Variable" as Var #lightblue
+
+User -> OS: Enter data via keyboard
+OS -> Buffer: Store input in buffer
+Cin -> Buffer: Extract appropriate amount of data from buffer
+Buffer --> Cin: Return buffered data
+Cin -> Var: Convert data to appropriate type and store in variable
+
+@enduml
