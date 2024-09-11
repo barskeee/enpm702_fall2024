@@ -20,12 +20,12 @@ int main() {
     // int *p_int{&x};
     // std::cout << &x << '\n';
     // std::cout << p_int << '\n';
-
+  
     //</> 2
     //=====================
     // int x{10};
     // std::cout << typeid(&x).name() << '\n';
-    // int *p_int;
+    // int *p_int; // putting this asterisk here signifies that this is a pointer
     // std::cout << typeid(p_int).name() << '\n';
 
     //</> 3-1
@@ -49,19 +49,20 @@ int main() {
     //=====================
     // int x{10};
     // std::cout << &x << '\n';     // 0x7fffffffdb3c
-    // std::cout << *(&x) << '\n';  // What is the output?
+    // std::cout << *(&x) << '\n';  // What is the output? the value (10)
+    // std::cout << x << '\n';
 
     // int *p_int{&x};
     // std::cout << p_int << '\n';   // 0x7fffffffdb3c
-    // std::cout << *p_int << '\n';  // What is the output?
+    // std::cout << *p_int << '\n';  // What is the output? the value (10)
 
     //</> 5
     //=====================
-    // int x{10};
+    // int x{10}; // x is on the stack
     // int *p_int{&x};
 
     // // Modify the value of x through p_int
-    // *p_int = 20;
+    // *p_int = 20; // can modify x without touching it
 
     // std::cout << x << '\n';       // 20
     // std::cout << *p_int << '\n';  // 20
@@ -71,7 +72,7 @@ int main() {
     // int x{10};
     // int *p_int{&x};
 
-    // *p_int *= 2;
+    // *p_int *= 2; // shorthand for p_int = p_int*2
 
     // std::cout << x << '\n';
     // std::cout << *p_int << '\n';
@@ -80,11 +81,11 @@ int main() {
     //=====================
     // int a{2};
     // int *p_int{&a};
-    // int **q_int{&p_int};
+    // int **q_int{&p_int}; // need ** or *** for each level of pointer
     // int ***r_int{&q_int};
 
     // std::cout << *p_int << '\n';
-    // std::cout << **q_int << '\n';
+    // std::cout << **q_int << '\n'; // each * is deferencing one level; can be augmented a lil
     // std::cout << ***r_int << '\n';
 
     //</> 7
@@ -119,7 +120,7 @@ int main() {
     // std::cout << *p_int << '\n';
 
     //</> 9-1
-    //=====================
+    //===================== Increment Pointer
     // int x{5};
     // int *p_int{&x};
     // std::cout << p_int << '\n';  // 0x7ffeeb2a5f80
@@ -127,7 +128,7 @@ int main() {
     // std::cout << p_int << '\n';  // 0x7ffeeb2a5f84
 
     //</> 9-2
-    //=====================
+    //===================== Decrement Pointer
     // int x{5};
     // int *p_int{&x};
     // std::cout << p_int << '\n';  // 0x7ffeeb2a5f88
@@ -214,12 +215,12 @@ int main() {
     // p3_int = &y;  // error
 
     //</> 15
-    //=====================
-    // int* p_int{new int{15}};
-    // std::cout << p_int << '\n';  // 0x55555556b2b0
-    // delete p_int;
-    // std::cout << p_int << '\n';   // 0x55555556b2b0
-    // std::cout << *p_int << '\n';  // UB
+    //===================== if having issues with the build showing everything can try to delete and rebuild build folder
+    int* p_int{new int{15}};
+    std::cout << p_int << '\n';  // 0x55555556b2b0
+    delete p_int;
+    std::cout << p_int << '\n';   // 0x55555556b2b0
+    std::cout << *p_int << '\n';  // UB
 
     //</> 16
     //=====================

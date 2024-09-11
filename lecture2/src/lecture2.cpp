@@ -53,59 +53,6 @@ using uint = unsigned int;
 int main() {
     //</> 1
     //=====================
-#include <limits>    // for the min and max range of a type
-#include <typeinfo>  // needed for typeid
-#define PI 3.14159   // symbolic constant
-#define SQUARE(x) ((x) * (x))
-
-//</> 31
-//=====================
-// int global_var{1};
-
-// void my_function() {
-//     global_var++;
-// }
-
-//</> 32
-//=====================
-// int global_x;
-// int global_y{1};
-
-//</> 33, 34, 35
-//=====================
-// // namespace MyNamespace
-// namespace MyNamespace {
-// int x{3};
-// int y{4};
-// }  // end namespace MyNamespace
-
-//</> 34
-//=====================
-// using namespace MyNamespace;
-
-//</> 35
-//=====================
-// using MyNamespace::x;
-
-//</> 36
-//=====================
-// // custom namespace
-// namespace MyNamespace {
-// int cout{1};
-// }  // end namespace MyNamespace
-// using namespace std;
-// using namespace MyNamespace;
-
-//</> 37
-//=====================
-// Create custom types using 'using'
-using Integer = int;
-using Float = float;
-using uint = unsigned int;
-
-int main() {
-    //</> 1
-    //=====================
     //  int break1;  // OK
     //  int break_1; // OK
     //  int Break1;  // OK
@@ -115,14 +62,10 @@ int main() {
 
     //</> 2
     //=====================
-    //</> 2
-    //=====================
     //  int number = 20;
     //  std::cout << sizeof(number) << '\n'; // 4 bytes on my machine
     //  std::cout << sizeof(int) << '\n';    // 4 bytes on my machine
 
-    //</> 3
-    //=====================
     //</> 3
     //=====================
     //  int number;                  // declaration
@@ -133,16 +76,12 @@ int main() {
 
     //</> 4
     //=====================
-    //</> 4
-    //=====================
     // int a{};                                                      // initialized to 0
     // std::cout << a << '\n';                                       // 0
-    // double b{3};                                                   // initialized to 0.0
+    // double b{};                                                   // initialized to 0.0
     // std::cout << b << '\n';                                       // 0
     // std::cout << std::fixed << std::setprecision(1) << b << '\n'; // 0.0
 
-    //</> 5
-    //=====================
     //</> 5
     //=====================
     // int a{};   // the value of a will be replaced later
@@ -151,84 +90,9 @@ int main() {
 
     //</> 6
     //=====================
-    //</> 6
-    //=====================
     // int number;                  // uninitialized
     // std::cout << number << '\n'; // garbage
 
-    //</> 7
-    //=====================
-    // std::cout << "Type\t\tSize (bytes)\tMin Value\t\tMax Value\n";
-    // std::cout << "--------------------------------------------------------------------\n";
-
-    // std::cout << "char\t\t" << sizeof(char)
-    //           << "\t\t" << int(std::numeric_limits<char>::min())
-    //           << "\t\t\t" << int(std::numeric_limits<char>::max()) << '\n';
-
-    // std::cout << "unsigned char\t" << sizeof(unsigned char)
-    //           << "\t\t" << int(std::numeric_limits<unsigned char>::min())
-    //           << "\t\t\t" << int(std::numeric_limits<unsigned char>::max()) << '\n';
-
-    // std::cout << "int\t\t" << sizeof(int)
-    //           << "\t\t" << std::numeric_limits<int>::min()
-    //           << "\t\t" << std::numeric_limits<int>::max() << '\n';
-
-    // std::cout << "unsigned int\t" << sizeof(unsigned int)
-    //           << "\t\t" << std::numeric_limits<unsigned int>::min()
-    //           << "\t\t\t" << std::numeric_limits<unsigned int>::max() << '\n';
-
-    // std::cout << "short\t\t" << sizeof(short)
-    //           << "\t\t" << std::numeric_limits<short>::min()
-    //           << "\t\t\t" << std::numeric_limits<short>::max() << '\n';
-
-    // std::cout << "unsigned short\t" << sizeof(unsigned short)
-    //           << "\t\t" << std::numeric_limits<unsigned short>::min()
-    //           << "\t\t\t" << std::numeric_limits<unsigned short>::max() << '\n';
-
-    // std::cout << "long\t\t" << sizeof(long)
-    //           << "\t\t" << std::numeric_limits<long>::min()
-    //           << "\t" << std::numeric_limits<long>::max() << '\n';
-
-    // std::cout << "unsigned long\t" << sizeof(unsigned long)
-    //           << "\t\t" << std::numeric_limits<unsigned long>::min()
-    //           << "\t\t\t" << std::numeric_limits<unsigned long>::max() << '\n';
-
-    // std::cout << "long long\t" << sizeof(long long)
-    //           << "\t\t" << std::numeric_limits<long long>::min()
-    //           << "\t" << std::numeric_limits<long long>::max() << '\n';
-
-    // std::cout << "ull\t\t" << sizeof(unsigned long long)
-    //           << "\t\t" << std::numeric_limits<unsigned long long>::min()
-    //           << "\t\t\t" << std::numeric_limits<unsigned long long>::max() << '\n';
-
-    //</> 8-1
-    //=====================
-    // std::cout << std::fixed << std::scientific << std::setprecision(10);
-    // // std::scientific -- Display the result in scientific notation
-    // // std::fixed and std::precision -- By combining std::fixed with std::setprecision, 
-    // // you can control the number of decimal places that are shown. 
-    // // For example, std::setprecision(2) with std::fixed will display the number with 
-    // // exactly two digits after the decimal point.
-    // std::cout << "Type\t\tSize (bytes)\tMin Value\t\t\tLowest Value\t\t\tMax Value\n";
-    // std::cout << "--------------------------------------------------------------------------------------------------------\n";
-
-    // std::cout << "float\t\t" << sizeof(float)
-    //           << "\t\t" << std::numeric_limits<float>::min()
-    //           << "\t\t" << std::numeric_limits<float>::lowest()
-    //           << "\t\t" << std::numeric_limits<float>::max() << '\n';
-
-    // std::cout << "\ndouble\t\t" << sizeof(double)
-    //           << "\t\t" << std::numeric_limits<double>::min()
-    //           << "\t\t" << std::numeric_limits<double>::lowest()
-    //           << "\t\t" << std::numeric_limits<double>::max() << '\n';
-
-    // std::cout << "\nlong double\t" << sizeof(long double)
-    //           << "\t\t" << std::numeric_limits<long double>::min()
-    //           << "\t\t" << std::numeric_limits<long double>::lowest()
-    //           << "\t\t" << std::numeric_limits<long double>::max() << '\n';
-
-    //</> 8-2
-    //=====================
     //</> 7
     //=====================
     // std::cout << "Type\t\tSize (bytes)\tMin Value\t\tMax Value\n";
@@ -309,8 +173,6 @@ int main() {
 
     //</> 8-3
     //=====================
-    //</> 8-3
-    //=====================
     // std::cout << std::setprecision(9);             // show 9 digits of precision
     // std::cout << 0.33333333333f << '\n';           // 0.333333343
     // std::cout << std::setprecision(15) << '\n';    // show 15 digits of precision
@@ -318,15 +180,11 @@ int main() {
 
     //</> 9-1
     //=====================
-    //</> 9-1
-    //=====================
     // bool is_today_sunny{true};
     // bool is_today_cloudy{false};
     // std::cout << is_today_sunny << '\n';  // 1
     // std::cout << is_today_cloudy << '\n'; // 0
 
-    //</> 9-2
-    //=====================
     //</> 9-2
     //=====================
     // bool is_today_sunny{true};
@@ -338,8 +196,6 @@ int main() {
     // std::cout << std::boolalpha << false << '\n';           // false
     // std::cout << std::noboolalpha << false << '\n';         // 0
 
-    //</> 10
-    //=====================
     //</> 10
     //=====================
     // int a{1};         // initialize variable a with literal value 1
@@ -433,7 +289,7 @@ int main() {
     // int a{3};
     // int b{2};
     // std::cout << "Type of result: " << typeid(a / b).name() << '\n';
-    // std::cout << "Value of result: " << static_cast<double>(a) / b << '\n';
+    // std::cout << "Value of result: " << a / b << '\n';
 
     //</> 19
     //=====================
@@ -447,13 +303,13 @@ int main() {
 
     //</> 20-1
     //=====================
-    // ask user for their age
-    std::cout << "Enter your age: ";
-    // init variable to hold user input
-    unsigned short age{};
-    // store input in variable age
-    std::cin >> age;
-    std::cout << "Your age is " << age << '\n';
+    // // ask user for their age
+    // std::cout << "Enter your age: ";
+    // // init variable to hold user input
+    // unsigned short age{};
+    // // store input in variable age
+    // std::cin >> age;
+    // std::cout << "Your age is " << age << '\n';
 
     //</> 20-2
     //=====================
@@ -468,7 +324,7 @@ int main() {
 
     //</> 21
     //=====================
-    // std::cout << "Enter two numbers separated by a space: ";
+    // std::cout << "Enter two integers separated by a space: ";
     // // init variable to hold the first number
     // int a{};
     // // init variable to hold the second number
@@ -476,7 +332,6 @@ int main() {
     // // store inputs in variables a and b
     // std::cin >> a >> b;
     // std::cout << "a: " << a << ", b: " << b << '\n';
-    // std::cout << "Type of result: " << typeid(b).name() << '\n';
 
     //</> 22-1
     //=====================
