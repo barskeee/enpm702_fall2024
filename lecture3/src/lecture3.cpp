@@ -216,11 +216,11 @@ int main() {
 
     //</> 15
     //===================== if having issues with the build showing everything can try to delete and rebuild build folder
-    int* p_int{new int{15}};
-    std::cout << p_int << '\n';  // 0x55555556b2b0
-    delete p_int;
-    std::cout << p_int << '\n';   // 0x55555556b2b0
-    std::cout << *p_int << '\n';  // UB
+    // int* p_int{new int{15}};
+    // std::cout << p_int << '\n';  // 0x55555556b2b0
+    // delete p_int;
+    // std::cout << p_int << '\n';   // 0x55555556b2b0
+    // std::cout << *p_int << '\n';  // UB
 
     //</> 16
     //=====================

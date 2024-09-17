@@ -5,6 +5,12 @@ int some_function() {
 }
 
 int main() {
+
+    // std::cout << "Enter an integer: ";
+    // int number{};
+    // std::cin >> number;
+    // std::cout << "You entered " << number << '\n';
+
     //</> 1
     //=====================
     // std::cout << "Enter your age: ";
@@ -19,7 +25,7 @@ int main() {
     // int a{2};
     // if (a > 0)
     //     std::cout << "a is positive\n";
-    // a = -a;  // this is always executed
+    // a = -a;  // this is always executed}
 
     //</> 3
     //=====================
@@ -32,41 +38,47 @@ int main() {
 
     //</> 4-1
     //=====================
-    // int x{1};
+    // int x{2};
 
     // if (x % 2)
-    //     std::cout << x << " is even\n";
-    // else
     //     std::cout << x << " is odd\n";
+    // else
+    //     std::cout << x << " is even\n";
 
     //</> 4-2
     //=====================
-    // int x{1};
-    // std::cout << ((x % 2) ? "x is even\n" : "x is odd\n");
+    // int x{2};
+    // std::cout << x%2 << '\n';
+    // std::cout << ((x % 2) ? "x is odd\n" : "x is even\n"); //you can do certain if-else statements using the conditional operator (?)
 
     //</> 5
     //=====================
-    // constexpr int x{3};
-    // constexpr int y{2};
+    // constexpr int x{7};
+    // constexpr int y{10};
 
-    // constexpr int larger_value{x > y ? x : y};                     // initialize larger_value
+    // constexpr int larger_value{x > y ? x : y}; // very cool method of use   & initialize larger_value
     // std::cout << "The larger value is: " << larger_value << '\n';  // 3
 
     //</> 6
-    //=====================
+    //===================== 
+    // have to use above method of conditional operatory instead of if-else bc the variable larger_value is local to the if-else statement
+    // can fix this issue by adding std::cout to each if/else block like so 
     // constexpr int x{3};
-    // constexpr int y{2};
+    // constexpr int y{7};
 
-    // if (x > y)
+    // if (x > y) {
     //     constexpr int larger_value{x};
-    // else
+    //     std::cout << "The larger value is: " << larger_value << '\n';
+    // }
+    // else {
     //     constexpr int larger_value{y};
-
+    //     std::cout << "The larger value is: " << larger_value << '\n';
+    // }
     // std::cout << "The larger value is: " << larger_value << '\n';
 
     //</> 7
     //=====================
-    // int a{1};
+    // int a{-5};
 
     // if (a > 0)
     //     std::cout << "Value is positive\n";  // if a > 0 is true
@@ -75,7 +87,7 @@ int main() {
     // else
     //     std::cout << "Value is zero\n";  // if a > 0 AND a < 0 are false
 
-    //</> 8
+    //</> 8 -- Implicit Conversion
     //=====================
     // if (2)                                   // converted to true
     //     std::cout << "Condition1 is true\n";  // executed
@@ -112,7 +124,7 @@ int main() {
 
     //</> 11
     //=====================
-    // int a{3};
+    // int a{2};
 
     // switch (a) {
     //     case 1:  // no match
