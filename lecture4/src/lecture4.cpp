@@ -113,17 +113,21 @@ int main() {
 
     //</> 9
     //=====================
-    // std::string quote{"Just a flesh wound!"};
-    // /*
-    //     write a for loop to print each character of the string
-    // */
+//     std::string quote{"Just a flesh wound!"};
+//     /*
+//         write a for loop to print each character of the string
+//     */
+//    for (size_t l{}; l < quote.length(); l++){ //size_t better type than int because easier to compare since quote.size() will give you the same thing
+//     std::cout << quote.at(l) << '\n';
+//    }
 
     //</> 10
     //=====================
     // std::string quote{"Just a flesh wound!"};
 
-    // for (char c : quote) {
+    // for (const auto& c : quote) { // auto& references each letter and const doesn't change og strand
     //     std::cout << c << ' ';
+    //     std::cout << typeid(c).name() << '\n';
     // }
     // std::cout << '\n';
 

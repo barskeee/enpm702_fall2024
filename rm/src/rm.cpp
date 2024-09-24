@@ -157,7 +157,7 @@ int main() {
     // std::cout << "switch has terminated\n";
 
     //</> 13
-    //=====================
+    //===================== should give error but didn't last time
     // int choice{1};
 
     // switch (choice) {
@@ -381,7 +381,7 @@ int main() {
     // // execution will continue here after the break
     // std::cout << "Resuming program execution\n";
 
-    //</> 27
+    //</> 27y/n
     //=====================
     // int num{};
 
