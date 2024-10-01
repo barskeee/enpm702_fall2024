@@ -9,3 +9,28 @@
  * @copyright Copyright (c) 2024
  *
  */
+
+/**
+ * @brief 
+ * 
+ * @param number Number to be printed
+ */
+void print_number(int number);
+
+/**
+ * @brief Prompt the used for a number
+ * 
+ * More accurate description
+ * 
+ */
+void prompt_user();
+
+/**
+ * @brief 
+ * 
+ * @param x 
+ * @param y 
+ * @param z 
+ * @return int 
+ */
+int multiply(int x, int y, double z);

@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.20.0)
-project(lecture4 VERSION 0.1.0)
+project(lecture5 VERSION 0.1.0)
 
-
+include_directories(lecture5/include) # so that program can find header
 # Compilation flags
 add_compile_options(-Wall)
 
 # Add executable
-add_executable(lecture4 lecture4/src/lecture4.cpp)
+add_executable(lecture5 lecture5/src/lecture5.cpp)
 
 
 # add_custom_command(TARGET rm POST_BUILD
@@ -38,5 +38,5 @@ add_custom_target(run_valgrind ALL
 
 
 # Set C++ standard to C++17
-set_property(TARGET lecture4 PROPERTY CXX_STANDARD 17)
+set_property(TARGET lecture5 PROPERTY CXX_STANDARD 17)
 

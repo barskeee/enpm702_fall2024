@@ -97,7 +97,7 @@ int main() {
     // std::cout << quote.at(5) << '\n';    // return the 6th character
     // std::cout << quote.back() << '\n';   // return a ref to the last character
     // quote.back() = 'D';                  // modify the last character
-    // std::cout << quote.back() << '\n';
+    // std::cout << quote.back() << '\n';ref
     // quote[6] = 'A';     // modify the 7th character
     // quote.at(6) = 'a';  // modify the 7th character
 
@@ -409,13 +409,13 @@ int main() {
     // }
     // std::cout << '\n';
 
-    //</> 28
-    //=====================
+    // </> 28
+    // =====================
     // int my_array[5]{1, 2, 3, 4, 5};
     // int* ptr = my_array;
 
-    // for (size_t i{0}; i < std::size(my_array); ++i) {
-    //     // write code here
+    // for (size_t i{0}; i < std::size(my_array); ++i) { // try out printing all the numbers one by one
+    //     std::cout << *ptr++ << '\n'; // did it i think
     // }
 
     //</> 29
@@ -580,8 +580,9 @@ int main() {
     //=====================
     // std::vector<int> v1{-1, 3, 5};   // initialization with explicit values
     // std::vector<int> v2{};           // zero initialization
-    // std::cout << v2.size() << '\n';  // ???
-    // std::cout << v2.at(0) << '\n';   // ???
+    // std::cout << v2.size() << '\n';  // 0
+    // std::cout << v2.capacity() << '\n';
+    // std::cout << v2.at(0) << '\n';   // terminated bc can't didn't initialized anything inside there. this would work with array bc it's fixed-size so is initialized with zeros already
     // v2 = v1;                         // copy items of v1 into v2
     // auto v3{v1};                     // initialization from an existing vector
 
@@ -610,7 +611,6 @@ int main() {
     // std::cout << '\n';
 
     // numbers.assign({1, 2, 3, 4});  // replace entire content with new values
-
     
     //</> 37
     //=====================

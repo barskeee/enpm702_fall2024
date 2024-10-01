@@ -12,15 +12,18 @@
 #include <iostream>
 #include <typeinfo>  // needed for typeid
 #include <vector>
+#include "lecture5.hpp" // calls my header file that has all function declarations
 
 
-//</> 1
+//</> 1 baby's first c++ function
 //=====================
-
+// int sum(int a, int b);
+// int main(){
+//     sum(2,3);
+// }
 
 //</> 2
 //=====================
-
 // // function declaration/prototype
 // int add(int a, int b);
 
@@ -54,7 +57,7 @@
 //     std::cout << "exit main\n";
 // }
 
-//</> 4
+//</> 4 - didn't declare so compiler doesn't know to keep looking
 //=====================
 // void print_hello() {
 //     std::cout << "hello, ";
@@ -260,7 +263,7 @@
 //</> 18
 //=====================
 // // Function to return a reference to the element at a given index
-// int& get_element(std::vector<int>& vec, int index) {
+// int& get_element(std::vector<int>& vec, int index) { // int& will return integer by reference
 //     return vec[index];  // Returning a reference to the element
 // }
 
@@ -283,7 +286,7 @@
 //</> 19
 //=====================
 // // Function to return a const reference to the element at a given index
-// const int& get_element(std::vector<int>& vec, int index) {
+// const int& get_element(std::vector<int>& vec, int index) { // const int& is a const reference
 //     return vec[index];  // Returning a reference to the element
 // }
 
