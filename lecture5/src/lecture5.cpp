@@ -14,7 +14,6 @@
 #include <vector>
 #include "lecture5.hpp" // calls my header file that has all function declarations
 
-
 //</> 1 baby's first c++ function
 //=====================
 // int sum(int a, int b);
@@ -125,6 +124,12 @@
 //</> 8
 //=====================
 // Write swap_values
+// Exercise #2 - Done at the beginning of class on 10/1/24
+// void swap_values(int &a, int &b){ //we work on the stack here
+//     int temp{a}; //tmp = 5
+//     a = b; //a = 10
+//     b = temp; //b = 5
+// }
 // int main() {
 //     int x{5};
 //     int y{10};

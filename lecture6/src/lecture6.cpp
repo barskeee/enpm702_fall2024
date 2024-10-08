@@ -70,7 +70,7 @@ int main() {
 
     //</> 3-1
     //=====================
-    // Allocate an int on the heap
+    // // Allocate an int on the heap
     // auto u = std::make_unique<int>(10);
     // if (u) {  // if u_ptr is not null
     //     std::cout << "The value at " << u.get() << " is " << *u << '\n';

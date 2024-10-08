@@ -267,6 +267,17 @@ int main() {
     // std::cout << "Type of result: " << typeid(us + ul).name() << '\n';  // unsigned long
     // std::cout << "Value of result: " << us + ul << '\n';                // 700010
 
+    // int x{};
+    // std::cout << "Input an integer: ";
+    // std::cin >> x;
+    // while (std::cin.fail()){
+    //     std::cout << "error" << '\n';
+    //     std::cin.clear();
+    //     std::cin.ignore(256,'\n');
+    //     std::cout << "try again ";
+    //     std::cin >> x;
+    // }
+
     //</> 16
     //=====================
     // short s1 = 100;
@@ -324,14 +335,14 @@ int main() {
 
     //</> 21
     //=====================
-    // std::cout << "Enter two integers separated by a space: ";
-    // // init variable to hold the first number
-    // int a{};
-    // // init variable to hold the second number
-    // double b{};
-    // // store inputs in variables a and b
-    // std::cin >> a >> b;
-    // std::cout << "a: " << a << ", b: " << b << '\n';
+    std::cout << "Enter two integers separated by a space: ";
+    // init variable to hold the first number
+    int a{};
+    // init variable to hold the second number
+    double b{};
+    // store inputs in variables a and b
+    std::cin >> a >> b;
+    std::cout << "a: " << a << ", b: " << b << '\n';
 
     //</> 22-1
     //=====================
