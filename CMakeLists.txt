@@ -5,8 +5,9 @@ include_directories(lecture7/include) # so that program can find header
 # Compilation flags
 add_compile_options(-Wall)
 
+include_directories(lecture7/include)
 # Add executable
-add_executable(lecture7 lecture7/src/main.cpp lecture7/src/person.cpp)
+add_executable(lecture7 lecture7/src/main.cpp lecture7/src/person.cpp lecture7/src/date.cpp)
 
 
 # add_custom_command(TARGET rm POST_BUILD
