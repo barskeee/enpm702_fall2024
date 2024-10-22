@@ -1,16 +1,15 @@
 
-
 //</> Example #2
 //=====================
-// #include <iostream>
-// #include "example2.hpp"
-// #include "example2.hpp"
+#include <iostream>
+#include "example2.hpp"
+#include "example2.hpp"
 
-// extern int x;
+extern int x;
 
-// int main() {
-//     std::cout << x << '\n';
-// }
+int main() {
+    std::cout << x << '\n';
+}
 
 //</> Example #7
 //=====================
