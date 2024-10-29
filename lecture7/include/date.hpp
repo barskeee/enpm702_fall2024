@@ -24,7 +24,6 @@ class Date{
     // Date(ushort day, ushort month, ushort year) : day_{day}, month_{month}, year_{year}{} // member initializer list - more efficient than regular
     
     // these two are methods
-    // Date(ushort day, ushort month, ushort year);
     void print_date() const;
     void get_attribute_offsets() const;
 

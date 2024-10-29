@@ -18,17 +18,13 @@
 
 // #include <iostream>
 // #include <memory>
-
 // #include "date.hpp"
 
 // int main() {
 //     university::Date date;
 //     std::cout << sizeof date << '\n';
-
 //     auto u_date = std::make_unique<university::Date>(); // make unique pointer to an object (date) (only object's attributes are pushed onto heap/stack)
 //     std::cout << sizeof u_date << '\n'; // size of unique pointer (on stack) (pointer is pointing to date object on the heap) - a pointer is 8 bytes
-//     std::cout << sizeof *u_date << '\n'; // size of what unique pointer is pointing to
-// }<< sizeof u_date << '\n'; // size of unique pointer (on stack) (pointer is pointing to date object on the heap) - a pointer is 8 bytes
 //     std::cout << sizeof *u_date << '\n'; // size of what unique pointer is pointing to
 // }
 
@@ -124,12 +120,12 @@
 // }
 
 // Practice in class on 10/22/24
-#include "practice_7.hpp"
+// #include "practice_7.hpp"
 
-int main(){
-    my_namespace::A first;
-    my_namespace::A second(1,2);
-}
+// int main(){
+//     my_namespace::A first;
+//     my_namespace::A second(1,2);
+// }
 
 // //</> code #7
 // //=====================
@@ -142,7 +138,6 @@ int main(){
 // //</> code #8
 // //=====================
 // #include <iostream>
-
 // #include "code8.hpp"
 
 // int main() {

@@ -1,5 +1,4 @@
 
-
 // //</>--- code #1
 // //=====================
 
@@ -59,28 +58,28 @@
 // #include "driving/vehicle.hpp"
 
 // int main(){
-//     //-- tested Date class
-//     // try {
-//     //     driving::Date birthdate(driving::Date(22,2,2024));
-//     // } catch (const std::invalid_argument& e) {
-//     //     std::cerr << e.what() << '\n';
-//     // }
+//     // -- tested Date class
+//     try {
+//         driving::Date birthdate(driving::Date(22,2,2024));
+//     } catch (const std::invalid_argument& e) {
+//         std::cerr << e.what() << '\n';
+//     }
     
 //     // -- tested Engine class
-//     // driving::Engine engine(260);
-//     // engine.start();
+//     driving::Engine engine(260);
+//     engine.start();
 
-//     // //-- test Driver class
-//     // driving::Driver alain("Alain Prost", driving::Date{2,2,1985});
-//     // alain.drive_vehicle();
-//     // std::cout << alain.get_name() << '\n';
+//     //-- test Driver class
+//     driving::Driver alain("Alain Prost", driving::Date{2,2,1985});
+//     alain.drive_vehicle();
+//     std::cout << alain.get_name() << '\n';
 
 //     auto hamilton = std::make_shared<driving::Driver>("Lewis Hamilton",driving::Date{2,2,1985}); // shared pointer has 3 pointers within it
 
-//     auto tesla = std::make_shared<driving::Vehicle>("Model S","Red",260);
-//     hamilton->set_vehicle(tesla);
-//     // tesla.set_driver(hamilton);
-//     tesla.drive(); // this code not working, can look back at lecture on 10/22/24
+    // auto tesla = std::make_shared<driving::Vehicle>("Model S","Red",260);
+    // hamilton->set_vehicle(tesla);
+    // // tesla.set_driver(hamilton);
+    // tesla.drive(); // this code not working, can look back at lecture on 10/22/24
 // }
 
 
