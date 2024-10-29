@@ -49,9 +49,40 @@
 //     }
 // }
 
-// //</>--- code #3
-// //=====================
+//</>--- code #3
+//=====================
 // #include <iostream>
+// #include <memory>
+// #include "driving/date.hpp"
+// #include "driving/engine.hpp"
+// #include "driving/driver.hpp"
+// #include "driving/vehicle.hpp"
+
+// int main(){
+//     //-- tested Date class
+//     // try {
+//     //     driving::Date birthdate(driving::Date(22,2,2024));
+//     // } catch (const std::invalid_argument& e) {
+//     //     std::cerr << e.what() << '\n';
+//     // }
+    
+//     // -- tested Engine class
+//     // driving::Engine engine(260);
+//     // engine.start();
+
+//     // //-- test Driver class
+//     // driving::Driver alain("Alain Prost", driving::Date{2,2,1985});
+//     // alain.drive_vehicle();
+//     // std::cout << alain.get_name() << '\n';
+
+//     auto hamilton = std::make_shared<driving::Driver>("Lewis Hamilton",driving::Date{2,2,1985}); // shared pointer has 3 pointers within it
+
+//     auto tesla = std::make_shared<driving::Vehicle>("Model S","Red",260);
+//     hamilton->set_vehicle(tesla);
+//     // tesla.set_driver(hamilton);
+//     tesla.drive(); // this code not working, can look back at lecture on 10/22/24
+// }
+
 
 // class Temperature {
 //    public:
@@ -102,35 +133,35 @@
 //     test(3.5);
 // }
 
-//</>--- code #5
-//=====================
+// //</>--- code #5
+// //=====================
 
-#include <memory>
+// #include <memory>
 
-#include "driving/date.hpp"
-#include "driving/driver.hpp"
-#include "driving/engine.hpp"
-#include "driving/vehicle.hpp"
+// #include "driving/date.hpp"
+// #include "driving/driver.hpp"
+// #include "driving/engine.hpp"
+// #include "driving/vehicle.hpp"
 
-int main() {
-    // driving::Date birthdate{driving::Date(232, 2, 2024)};
+// int main() {
+//     // driving::Date birthdate{driving::Date(232, 2, 2024)};
 
-    // auto engine_ptr = std::make_unique<driving::Engine>(670);
-    // engine_ptr->start();
+//     // auto engine_ptr = std::make_unique<driving::Engine>(670);
+//     // engine_ptr->start();
 
-    auto driver_ptr = std::make_shared<driving::Driver>("George", driving::Date(1, 1, 1988));
-    // driver_ptr->print_date_of_birth();
-    // driver_ptr->drive_vehicle();
-    // driver_ptr->get_birthdate().print_date();
+//     auto driver_ptr = std::make_shared<driving::Driver>("George", driving::Date(1, 1, 1988));
+//     // driver_ptr->print_date_of_birth();
+//     // driver_ptr->drive_vehicle();
+//     // driver_ptr->get_birthdate().print_date();
 
-    // auto vehicle_ptr = std::make_shared<driving::Vehicle>("Tesla Model S", "Red", 670);
-    // vehicle_ptr->set_driver(driver_ptr);
-    // vehicle_ptr->drive(20.76);
+//     // auto vehicle_ptr = std::make_shared<driving::Vehicle>("Tesla Model S", "Red", 670);
+//     // vehicle_ptr->set_driver(driver_ptr);
+//     // vehicle_ptr->drive(20.76);
 
-    auto ev_ptr = std::make_shared<driving::ElectricVehicle>("Tesla Model S", "Red", 670, 100, 0.2);
-    ev_ptr->set_driver(driver_ptr);
-    ev_ptr->drive(30000);
-}
+//     auto ev_ptr = std::make_shared<driving::ElectricVehicle>("Tesla Model S", "Red", 670, 100, 0.2);
+//     ev_ptr->set_driver(driver_ptr);
+//     ev_ptr->drive(30000);
+// }
 
 // //</>--- code #6
 // //=====================

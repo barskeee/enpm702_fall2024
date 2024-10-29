@@ -12,14 +12,15 @@ class Engine;
 
 class Vehicle {
    public:
-    Vehicle(const std::string& model, const std::string& color, int horsepower)
-        : model_{model}, color_{color}, engine_{std::make_unique<driving::Engine>(horsepower)} {
+    Vehicle(const std::string& model, const std::string& color, unsigned int horsepower)
+        : model_{model}, color_{color}, 
+        engine_{std::make_unique<driving::Engine>(horsepower)} { //making pointer to engine bc don't want to store a hefty class on the stack
     }
 
-    void drive(double distance);
+    void drive() const;
     void set_driver(std::shared_ptr<driving::Driver> driver);
 
-   protected:
+   private:
     std::string model_;
     std::string color_;
     std::unique_ptr<driving::Engine> engine_;
@@ -27,23 +28,23 @@ class Vehicle {
 
 };  // class Vehicle
 
-// TODO
-class ElectricVehicle : public Vehicle {
-   public:
-    void charge_battery();
-    void drive(double distance);
-    ElectricVehicle(const std::string& model, const std::string& color, int horsepower, double battery_capacity, double consumption_rate)
-        : Vehicle(model, color, horsepower), battery_capacity_{battery_capacity}, battery_consumption_rate_{consumption_rate} {
-    }
+// // TODO
+// class ElectricVehicle : public Vehicle {
+//    public:
+//     void charge_battery();
+//     void drive(double distance);
+//     ElectricVehicle(const std::string& model, const std::string& color, int horsepower, double battery_capacity, double consumption_rate)
+//         : Vehicle(model, color, horsepower), battery_capacity_{battery_capacity}, battery_consumption_rate_{consumption_rate} {
+//     }
 
-   private:
-    double battery_capacity_; // percentage
-    double battery_consumption_rate_;  // battery consumption rate per mile
-};  // ElectricVehicle
+//    private:
+//     double battery_capacity_; // percentage
+//     double battery_consumption_rate_;  // battery consumption rate per mile
+// };  // ElectricVehicle
 
-// TODO
-class GasolineVehicle : public Vehicle {
-   public:
-   private:
-};  // GasolineVehicle
+// // TODO
+// class GasolineVehicle : public Vehicle {
+//    public:
+//    private:
+// };  // GasolineVehicle
 }  // namespace driving

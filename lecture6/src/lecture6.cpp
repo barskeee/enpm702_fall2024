@@ -14,7 +14,8 @@
 #include <memory>    // Required for smart pointers
 
 void display(std::unique_ptr<int> ptr) {
-    // Implicit: std::unique_ptr<int> ptr{u};
+    // Implicit: std::unique_ptr<int> ptr{u}; // doesn't work with block 11 bc can't make a copy of a unique pointer
+    // Implicit: std::unique_ptr<int> p{std::move(u)}
     std::cout << *ptr << '\n';
 }
 
@@ -65,12 +66,12 @@ int main() {
     //     std::cout << *u << '\n';  // 10
     //     *u = 20;                  // modify the resource
     //     std::cout << *u << '\n';  // 20
-    //     std::cout << u << '\n';   // error: no operator<< that takes a unique_ptr
+    //     std::cout << u.get() << '\n';   // error: no operator<< that takes a unique_ptr
     // }  // u is destroyed here and resource is automatically deleted
 
     //</> 3-1
     //=====================
-    // // Allocate an int on the heap
+    // Allocate an int on the heap
     // auto u = std::make_unique<int>(10);
     // if (u) {  // if u_ptr is not null
     //     std::cout << "The value at " << u.get() << " is " << *u << '\n';
@@ -78,7 +79,8 @@ int main() {
 
     //</> 3-2
     //=====================
-    // // Allocate an int on the heap
+    // Allocate an int on the heap
+    // std::unique_ptr<int> u = std::make_unique<int>(10);
     // auto u = std::make_unique<int>(10);
     // int* p{u.get()};  // get the stored pointer and store it in a variable
     // if (p) {          // if p is not null
@@ -90,14 +92,14 @@ int main() {
     // auto u = std::make_unique<int>(10);
     // auto r = u.release();
     // std::cout << *r << '\n';
-    // assert(u.get() == nullptr);
-    // assert(u == nullptr);
+    // assert(u.get() == nullptr); //true
+    // assert(u == nullptr); //true
     // delete r;  // don't forget to free the memory to avoid a memory leak
 
     //</> 5
     //=====================
     // auto u = std::make_unique<int>(10);
-    // u.release();
+    // u.release(); // causes a memory leak
 
     //</> 6
     //=====================
@@ -148,7 +150,7 @@ int main() {
 
     //</> 13
     //=====================
-    // // Allocate memory for an int on the heap
+    // Allocate memory for an int on the heap
     // auto u1 = std::make_unique<int>(10);
     // std::cout << "u1: " << u1.get() << '\n';  // @1
 
@@ -215,14 +217,14 @@ int main() {
     //=====================
     // auto s = std::make_shared<int>(10);
     // std::cout << s.use_count() << '\n';  // 1
-    // sink_shared_ptr(s);
+    // sink_shared_ptr(s); // 2
     // std::cout << s.use_count() << '\n';  // 1
 
     //</> 19
     //=====================
     // auto s = std::make_shared<int>(10);
     // std::cout << s.use_count() << '\n';  // 1
-    // reseat_shared_ptr(s);
+    // reseat_shared_ptr(s); 
     // std::cout << s.use_count() << '\n';  // 1
 
     //</> 20

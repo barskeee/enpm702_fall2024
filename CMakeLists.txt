@@ -7,7 +7,8 @@ add_compile_options(-Wall)
 
 include_directories(lecture7/include)
 # Add executable
-add_executable(lecture7 lecture7/src/main.cpp lecture7/src/person.cpp lecture7/src/date.cpp)
+# add_executable(lecture8 lecture8/src/main.cpp lecture8/src/date.cpp lecture8/src/engine.cpp lecture8/src/driver.cpp lecture8/src/vehicle.cpp)
+add_executable(lecture7 lecture7/src/main.cpp lecture7/src/date.cpp lecture7/src/person.cpp)
 
 
 # add_custom_command(TARGET rm POST_BUILD
@@ -33,7 +34,7 @@ add_executable(lecture7 lecture7/src/main.cpp lecture7/src/person.cpp lecture7/s
 
 # add_custom_target(run_valgrind ALL
 #     COMMAND valgrind --show-error-list=yes --leak-check=full --show-leak-kinds=all --track-origins=yes ./rm
-#     DEPENDS lecture7
+#     DEPENDS lecture8
 #     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 # )
 
