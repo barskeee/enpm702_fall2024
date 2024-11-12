@@ -197,6 +197,9 @@ int main(){
     // ---------------------------------
     // -- Testing GasolineVehicle object
     // ---------------------------------
+    // ---------------------------------
+    // -- Testing GasolineVehicle object
+    // ---------------------------------
     // // driver
     // auto alain_prost = std::make_shared<driving::Driver>("Alain Prost", driving::Date(24, 2, 1955));
     // // vehicle
@@ -205,6 +208,9 @@ int main(){
     // ford_mustang->drive(200);
     // ford_mustang->refuel();
 
+    // ---------------------------------
+    // -- Testing runtime polymorphism
+    // ---------------------------------
     // ---------------------------------
     // -- Testing runtime polymorphism
     // ---------------------------------
