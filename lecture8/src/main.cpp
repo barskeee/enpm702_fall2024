@@ -1,9 +1,18 @@
-
-
+// // Beginning of class practice
 // class A {
+//     public:
+//     A(int a) : a_{a}{}
+
+//     protected:
+//     int a_;
 // };
 
-// class B {
+// class B : public A { // uses inheritance
+//     public:
+//     B(int a, int b) : A(a), b_{b} {}
+
+//     public:
+//     int b_;
 // };
 
 // int main() {
@@ -145,13 +154,24 @@
 #include "driving/engine.hpp"
 #include "driving/vehicle.hpp"
 
+#include <set> //not sure if really needed
+#include <string>
+int main(){
+    std::set<std::string> set_test{"one","two","three"};
+    set_test.insert("four");
+    set_test.insert("three");
+    for (const auto& element : set_test) {
+        std::cout << element << " "; 
+    }
+    std::cout << std::endl;
+}
 
 // definitions
 
 // void test_drive(std::shared_ptr<driving::Vehicle> vehicle, double distance) {
 //     vehicle->drive(distance);
 // }
-
+//  // using these is a method of overriding and using derived class instead of base class, but not best method, virtual method is best
 // void test_drive(std::shared_ptr<driving::ElectricVehicle> vehicle, double distance) {
 //     vehicle->drive(distance);
 // }
@@ -160,11 +180,12 @@
 //     vehicle->drive(distance);
 // }
 
-int main() {
-    // // ---------------------------------
-    // // -- Testing ElectricVehicle object
-    // // ---------------------------------
-    // // driver
+// int main() {
+    // auto tesla_model_s = std::make_shared<driving::ElectricVehicle>("Tesla Model S", "Red", 670, 20, 0.2);
+    // ---------------------------------
+    // -- Testing ElectricVehicle object
+    // ---------------------------------
+    // driver
     // auto lewis_hamilton = std::make_shared<driving::Driver>("Lewis Hamilton", driving::Date(7, 1, 1985));
     // // vehicle
     // auto tesla_model_s = std::make_shared<driving::ElectricVehicle>("Tesla Model S", "Red", 670, 20, 0.2);
@@ -173,9 +194,9 @@ int main() {
     // tesla_model_s->display_battery_level();
     // tesla_model_s->drive(30000);
 
-    // // ---------------------------------
-    // // -- Testing GasolineVehicle object
-    // // ---------------------------------
+    // ---------------------------------
+    // -- Testing GasolineVehicle object
+    // ---------------------------------
     // // driver
     // auto alain_prost = std::make_shared<driving::Driver>("Alain Prost", driving::Date(24, 2, 1955));
     // // vehicle
@@ -184,9 +205,9 @@ int main() {
     // ford_mustang->drive(200);
     // ford_mustang->refuel();
 
-    // // ---------------------------------
-    // // -- Testing runtime polymorphism
-    // // ---------------------------------
+    // ---------------------------------
+    // -- Testing runtime polymorphism
+    // ---------------------------------
 
     // // Type alias
     // using Gas = driving::GasolineVehicle;
@@ -202,7 +223,7 @@ int main() {
     // auto mustang = std::make_shared<Gas>("Ford Mustang", "Black", 300, 60.0, 0.12);
     // mustang->set_driver(alain);
 
-    // // Which drive() is used?
+    // // // Which drive() is used?
     // // model_s->drive(2000);
     // // std::cout << "================" << '\n';
     // // mustang->drive(2000);
@@ -211,7 +232,7 @@ int main() {
     // test_drive(model_s, 2000);
     // std::cout << "================" << '\n';
     // test_drive(mustang, 3000);
-}
+// }
 
 //</>--- code #12
 //=====================

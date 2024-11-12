@@ -11,13 +11,13 @@ class Vehicle;
 
 class Driver {
    public:
-    Driver(const std::string& name, driving::Date dob) : name_{name}, date_of_brith_{dob} {
+    Driver(const std::string& name, driving::Date dob) : name_{name}, date_of_birth_{dob} {
         /*body*/
     }
     void drive_vehicle(double distance) const;
 
     driving::Date get_birthdate() const {
-        return date_of_brith_;
+        return date_of_birth_;
     }
 
     std::string get_name() const {

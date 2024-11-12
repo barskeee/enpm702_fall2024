@@ -12,6 +12,5 @@ class Engine {
 
    private:
     unsigned int horsepower_;
-    unsigned int horsepower_;
 };  // class Engine
 }  // namespace driving
