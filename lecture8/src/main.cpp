@@ -1,4 +1,15 @@
 
+
+// class A {
+// };
+
+// class B {
+// };
+
+// int main() {
+//     B b(3, 4);
+// }
+
 // //</>--- code #1
 // //=====================
 
@@ -13,6 +24,8 @@
 // }
 
 // int main() {
+//     // int result = divide(10, 0);  // This will throw an exception
+//     // std::cout << "Result: " << result << '\n';
 //     try {
 //         int result = divide(10, 0);  // This will throw an exception
 //         std::cout << "Result: " << result << '\n';
@@ -50,121 +63,43 @@
 
 //</>--- code #3
 //=====================
+
 // #include <iostream>
 // #include <memory>
+
 // #include "driving/date.hpp"
-// #include "driving/engine.hpp"
 // #include "driving/driver.hpp"
+// #include "driving/engine.hpp"
 // #include "driving/vehicle.hpp"
 
-// int main(){
-//     // -- tested Date class
-//     try {
-//         driving::Date birthdate(driving::Date(22,2,2024));
-//     } catch (const std::invalid_argument& e) {
-//         std::cerr << e.what() << '\n';
-//     }
-    
-//     // -- tested Engine class
-//     driving::Engine engine(260);
-//     engine.start();
+// int main() {
+//     //-- test Date class
+//     // try {
+//     //     driving::Date birthdate{driving::Date(28, 2, 2025)};
+//     // } catch (const std::invalid_argument& e) {
+//     //     std::cerr << e.what() << '\n';
+//     // }
+
+//     //-- test Engine class
+//     // driving::Engine engine(260);
+//     // engine.start();
 
 //     //-- test Driver class
-//     driving::Driver alain("Alain Prost", driving::Date{2,2,1985});
-//     alain.drive_vehicle();
-//     std::cout << alain.get_name() << '\n';
+//     // driving::Driver alain("Alain Prost", driving::Date{2, 2, 1985});
+//     // alain.drive_vehicle();
+//     // std::cout << alain.get_name() << '\n';
 
-//     auto hamilton = std::make_shared<driving::Driver>("Lewis Hamilton",driving::Date{2,2,1985}); // shared pointer has 3 pointers within it
+//     auto hamilton = std::make_shared<driving::Driver>("Lewis Hamilton", driving::Date{2, 2, 1985});
 
-    // auto tesla = std::make_shared<driving::Vehicle>("Model S","Red",260);
-    // hamilton->set_vehicle(tesla);
-    // // tesla.set_driver(hamilton);
-    // tesla.drive(); // this code not working, can look back at lecture on 10/22/24
-// }
+//     auto tesla = std::make_shared<driving::Vehicle>("Model S", "Red", 260);
+//     hamilton->set_vehicle(tesla);
+//     // tesla.set_driver(hamilton);
 
-
-// class Temperature {
-//    public:
-//     // Constructor taking one argument for the temperature in Celsius
-//     Temperature(double celsius)
-//         : celsius_{celsius} {
-//     }
-
-//     double get_celsius() const { return celsius_; }
-
-//    private:
-//     double celsius_;
-// };
-
-// void test(Temperature celcius) {
-//     std::cout << celcius.get_celsius() << '\n';
-// }
-
-// int main() {
-//     test(36.5);
 // }
 
 //</>--- code #4
 //=====================
-// #include <iostream>
-
-// class Unit {
-//    public:
-//     Unit(double m, double kg = 0.0, double s = 0.0)
-//         : meter_{m}, kg_{kg}, second_{s} {
-//     }
-
-//     double get_meter() const {
-//         return meter_;
-//     }
-
-//    private:
-//     double meter_;
-//     double kg_;
-//     double second_;
-// };
-
-// void test(Unit unit) {
-//     std::cout << unit.get_meter() << '\n';
-// }
-
-// int main() {
-//     test(3.5);
-// }
-
-// //</>--- code #5
-// //=====================
-
-// #include <memory>
-
-// #include "driving/date.hpp"
-// #include "driving/driver.hpp"
-// #include "driving/engine.hpp"
-// #include "driving/vehicle.hpp"
-
-// int main() {
-//     // driving::Date birthdate{driving::Date(232, 2, 2024)};
-
-//     // auto engine_ptr = std::make_unique<driving::Engine>(670);
-//     // engine_ptr->start();
-
-//     auto driver_ptr = std::make_shared<driving::Driver>("George", driving::Date(1, 1, 1988));
-//     // driver_ptr->print_date_of_birth();
-//     // driver_ptr->drive_vehicle();
-//     // driver_ptr->get_birthdate().print_date();
-
-//     // auto vehicle_ptr = std::make_shared<driving::Vehicle>("Tesla Model S", "Red", 670);
-//     // vehicle_ptr->set_driver(driver_ptr);
-//     // vehicle_ptr->drive(20.76);
-
-//     auto ev_ptr = std::make_shared<driving::ElectricVehicle>("Tesla Model S", "Red", 670, 100, 0.2);
-//     ev_ptr->set_driver(driver_ptr);
-//     ev_ptr->drive(30000);
-// }
-
-// //</>--- code #6
-// //=====================
-// #include "code6.hpp"
+// #include "code4.hpp"
 
 // int main(){
 //     Base base;
@@ -179,49 +114,130 @@
 //     derived_protected.print_members();
 // }
 
-// //</>--- code #7
-// //=====================
-
-// #include "code7.hpp"
-
-// int main(){
-//     Base base(10);
-// }
-
-// //</>--- code #8
-// //=====================
-
-// #include "code8.hpp"
-
-// int main(){
-//     Derived derived(20.5);
-// }
-
-// //</>--- code #9
-// //=====================
-
-// #include "code9.hpp"
-
-// int main(){
-//     Derived derived(20.5, 10);
-// }
-
-// //</>--- code #10
-// //=====================
-
-// #include "code10.hpp"
-
-// int main(){
-//     Derived derived(20.5, 10);
-// }
-
-//</>--- code #11
+//</>--- code #5
 //=====================
 
-// #include "code11.hpp"
+// #include "code5.hpp"
+
+// int main(){
+//     Base base;
+// }
+
+//</>--- code #6, #7, #8, #9
+//=====================
+
+// #include "code6_7_8_9.hpp"
 
 // int main(){
 //     Derived derived(20.5, 10);
 // }
 
+//</>--- code #10, #11
+//=====================
 
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <vector>
+
+#include "driving/date.hpp"
+#include "driving/driver.hpp"
+#include "driving/engine.hpp"
+#include "driving/vehicle.hpp"
+
+
+// definitions
+
+// void test_drive(std::shared_ptr<driving::Vehicle> vehicle, double distance) {
+//     vehicle->drive(distance);
+// }
+
+// void test_drive(std::shared_ptr<driving::ElectricVehicle> vehicle, double distance) {
+//     vehicle->drive(distance);
+// }
+
+// void test_drive(std::shared_ptr<driving::GasolineVehicle> vehicle, double distance) {
+//     vehicle->drive(distance);
+// }
+
+int main() {
+    // // ---------------------------------
+    // // -- Testing ElectricVehicle object
+    // // ---------------------------------
+    // // driver
+    // auto lewis_hamilton = std::make_shared<driving::Driver>("Lewis Hamilton", driving::Date(7, 1, 1985));
+    // // vehicle
+    // auto tesla_model_s = std::make_shared<driving::ElectricVehicle>("Tesla Model S", "Red", 670, 20, 0.2);
+    // tesla_model_s->set_driver(lewis_hamilton);
+    // tesla_model_s->full_recharge();
+    // tesla_model_s->display_battery_level();
+    // tesla_model_s->drive(30000);
+
+    // // ---------------------------------
+    // // -- Testing GasolineVehicle object
+    // // ---------------------------------
+    // // driver
+    // auto alain_prost = std::make_shared<driving::Driver>("Alain Prost", driving::Date(24, 2, 1955));
+    // // vehicle
+    // auto ford_mustang = std::make_shared<driving::GasolineVehicle>("Ford Mustang", "Black", 300, 60.0, 0.12);
+    // ford_mustang->set_driver(alain_prost);
+    // ford_mustang->drive(200);
+    // ford_mustang->refuel();
+
+    // // ---------------------------------
+    // // -- Testing runtime polymorphism
+    // // ---------------------------------
+
+    // // Type alias
+    // using Gas = driving::GasolineVehicle;
+    // using Electric = driving::ElectricVehicle;
+
+    // // // First vehicle
+    // auto lewis = std::make_shared<driving::Driver>("Lewis Hamilton", driving::Date(7, 1, 1985));
+    // auto model_s = std::make_shared<Electric>("Tesla Model S", "Red", 670, 20, 0.2);
+    // model_s->set_driver(lewis);
+
+    // // Second vehicle
+    // auto alain = std::make_shared<driving::Driver>("Alain Prost", driving::Date(24, 2, 1955));
+    // auto mustang = std::make_shared<Gas>("Ford Mustang", "Black", 300, 60.0, 0.12);
+    // mustang->set_driver(alain);
+
+    // // Which drive() is used?
+    // // model_s->drive(2000);
+    // // std::cout << "================" << '\n';
+    // // mustang->drive(2000);
+
+    // // All vehicle types
+    // test_drive(model_s, 2000);
+    // std::cout << "================" << '\n';
+    // test_drive(mustang, 3000);
+}
+
+//</>--- code #12
+//=====================
+
+// #include <memory>
+
+// #include "code12.hpp"
+
+// int main() {
+//     {
+//         std::unique_ptr<Base> ptr = std::make_unique<Derived>();
+//     }  // pointer goes out of scope here
+// }
+
+//</>--- code #13
+//=====================
+
+// #include "code13.hpp"
+// #include<vector>
+
+// void check(Base b) {
+//     b.test();
+// }
+
+// int main() {
+//     Derived derived;
+//     // Base& base{derived};
+//     check(derived);
+// }

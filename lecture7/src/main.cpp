@@ -1,5 +1,33 @@
-// //</>--- code #1
-// //=====================
+
+
+namespace my_namespace {
+class A {
+   public:
+    A() : a1_{1}, a2_{2} {
+        // open a file
+        // open a socket
+        /* body of the constructor */
+    }
+
+    A(int x, int y) : a1_{x}, a2_{y} {
+        /* body of the constructor */
+    }
+    ~A(){}
+
+   private:
+    int a1_;
+    int a2_;
+
+};  // class A
+}  // namespace my_namespace
+
+int main() {
+    my_namespace::A first;
+    first.a1_;
+    // my_namespace::A second(1, 2);
+}
+//</>--- code #1
+//=====================
 
 // #include <iostream>
 // #include <memory>
@@ -9,6 +37,7 @@
 // int main() {
 //     university::Date date;
 //     std::cout << sizeof date << '\n';
+//     date.get_attribute_offsets();
 
 //     auto u_date = std::make_unique<university::Date>(); // make unique pointer to an object (date) (only object's attributes are pushed onto heap/stack)
 // }
@@ -114,9 +143,11 @@
 
 //     auto u_date2 = std::make_unique<university::Date>();  // default ctor
 
-//     university::Date date3{1, 2, 1980}; // parameterized ctor
+//     // parameterized ctor
+//     university::Date date3{1, 2, 1980};
 
-//     auto u_date4 = std::make_unique<university::Date>(1, 2, 1980); // parameterized ctor
+//     // parameterized ctor
+//     auto u_date4 = std::make_unique<university::Date>(1, 2, 1980);
 // }
 
 // Practice in class on 10/22/24
@@ -220,4 +251,30 @@
 //         std::cout << "--- Second object" << '\n';
 //         MyClass my_class;  // Object created!
 //     }  // Object destroyed!
+// }
+
+//</>--- code #19
+//=====================
+// #include <iostream>
+// #include "code19.hpp"
+
+// void test(Temperature celcius) {
+//     std::cout << celcius.get_celsius() << '\n';
+// }
+
+// int main() {
+//     test(36.5);
+// }
+
+//</>--- code #20
+//=====================
+// #include <iostream>
+// #include "code20.hpp"
+
+// void test(Unit unit) {
+//     unit.print_units();
+// }
+
+// int main() {
+//     test(3.5);
 // }
